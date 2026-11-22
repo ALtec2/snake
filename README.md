@@ -1,4 +1,4 @@
-# SortingAlg
+# Snek
 <img width="180" height="40" alt="stupid" src="https://github.com/user-attachments/assets/a83508d6-a92d-4158-bca0-cf6293f0ceca" />
 
 ## Why I made it
