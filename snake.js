@@ -37,7 +37,7 @@ function onStart(){
 
 
 	let boxWidth = 350;
-	let boxHeight = 175;
+	let boxHeight = 175; 
 
 	let boxX = (board.width-boxWidth)/2;
 	let boxY = (board.height-boxHeight)/2;
@@ -53,7 +53,21 @@ function onStart(){
 	btn.innerText = "Start Game";
 }
 
+function startGame() {
+    startUp = true;
+    gameOver = false;
+    
+    snakeX = Math.floor(Math.random() * cols) * blockSize;
+    snakeY = Math.floor(Math.random() * rows) * blockSize;
+    velocityX = 0;
+    velocityY = 0;
+    snakeBody = [];
+    placeFood();
 
+    let btn = document.getElementById("restartBtn");
+    btn.style.display = "none";
+    btn.innerText = "Play Again";
+}
 
 function update() {
 	
@@ -104,9 +118,6 @@ function update() {
 			}
 		}
 	}
-    
-    
-
 }
 
 function onEnd(){
@@ -126,7 +137,9 @@ function onEnd(){
 	context.font = "bold 24px sans-serif";
 	context.textAlign = "center";
 	context.textBaseline = "middle";
-	context.fillText("Game Over", board.width/2, board.height/2);
+	context.fillText("Game Over", board.width/2, board.height/2 - 50);
+
+	document.getElementById("restartBtn").style.display = "block";
 }
 
 function placeFood(){
