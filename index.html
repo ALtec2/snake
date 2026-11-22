@@ -5,11 +5,13 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>Snake</title>
 		<link rel="stylesheet" href="snake.css">
-		<script src="snake.js"></script>
+		<script src="snake.js" defer></script>
 	</head>
 <body>
 	<h1>Snek</h1>
-	<canvas id="board"></canvas>
-	<button id="restartBtn" onclick="resetGame()" style="display: none;">Play Again</button>
+	<div class="game-container">
+		<canvas id="board"></canvas>
+		<button id="restartBtn" onclick="startGame()" style="display: none;">Start Game</button>
+	</div>
 </body>
 </html>
