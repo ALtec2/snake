@@ -16,18 +16,36 @@ canvas {
     margin: 50px auto;
 } 
 
+
+.game-container {
+    position: relative; 
+    display: inline-block;
+    margin: 50px auto;
+}
+
+canvas {
+    display: block;
+    margin: 0; 
+} 
+
 #restartBtn {
-	margin: 15px auto;
-	padding: 10px 25px;
-	font-size: 18px;
-	font-weight: bold;
-	background-color: black;
-	color: lightblue;
-	border-radius: 5px;
-	border: 5px solid white;
-	cursor: pointer;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
+    padding: 10px 25px;
+    font-size: 18px;
+    font-weight: bold;
+    background-color: black;
+    color: lightblue;
+    border-radius: 5px;
+    border: 2px solid white;
+    cursor: pointer;
+    z-index: 10; 
 }
 
 #restartBtn:hover {
-	background-color: #32cd32;
+    background-color: #32cd32;
+    color: black;
 }
