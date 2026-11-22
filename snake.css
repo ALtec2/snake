@@ -3,6 +3,8 @@ body {
 	font-family: 'Courier New', Courier, monospace;
 	text-align: center;
 	color: white;
+	margin: 0;
+	padding: 20 px 0 0 0;
 }  
 
 .centered {
@@ -19,8 +21,9 @@ canvas {
 
 .game-container {
     position: relative; 
-    display: inline-block;
-    margin: 50px auto;
+    display: block;
+    width: fit-content;
+    margin: 20px auto;
 }
 
 canvas {
