@@ -1,7 +1,7 @@
 // board
-var blockSize = 25;
-var rows = 20;
-var cols = 20;
+var blockSize = 10;
+var rows = 50;
+var cols = 50;
 var board;
 var context;
 
@@ -16,11 +16,12 @@ var snakeBody = [];
 var foodX;
 var foodY;
 
-var gameOver;     
+var gameOver;
 var startUp = false;
 var spawnCount = 0;
 var fallingObjects = []; 
 var warningTiles = []; 
+var score = 0;
 
 window.onload = function() {
     board = document.getElementById("board");
@@ -60,7 +61,7 @@ function onStart(){
 function startGame() {
     startUp = true;
     gameOver = false;
-     
+    
     snakeX = Math.floor(Math.random() * cols) * blockSize;
     snakeY = Math.floor(Math.random() * rows) * blockSize;
     velocityX = 0;
@@ -108,6 +109,7 @@ function update() {
 
         // Check Food Collision
         if (snakeX == foodX && snakeY == foodY) {
+        	score++;
             snakeBody.push([foodX, foodY]);
             placeFood();
         }
@@ -195,6 +197,8 @@ function onEnd(){
     context.textAlign = "center";
     context.textBaseline = "middle";
     context.fillText("Game Over", board.width / 2, board.height / 2 - 50);
+    context.fillText("Total Score: "+ score, board.width / 2, board.height / 2 + 50);
+
 
     let btn = document.getElementById("restartBtn");
     btn.style.display = "block";
@@ -202,7 +206,6 @@ function onEnd(){
 
 function placeFood() {
     let validPosition = false;
-
     while (!validPosition) {
         foodX = Math.floor(Math.random() * cols) * blockSize;
         foodY = Math.floor(Math.random() * rows) * blockSize;
@@ -224,19 +227,19 @@ function placeFood() {
 }
 
 function changeDirection(e){
-    if (e.code == "ArrowUp" && velocityY != 1) {
+    if ((e.code == "ArrowUp" || e.code == "KeyW" )&& velocityY != 1) {
         velocityX = 0;
         velocityY = -1;
     }
-    else if (e.code == "ArrowDown" && velocityY != -1) {
+    else if ((e.code == "ArrowDown" || e.code == "KeyS" ) && velocityY != -1) {
         velocityX = 0;
         velocityY = 1;
     }
-    else if (e.code == "ArrowLeft" && velocityX != 1) { 
+    else if ((e.code == "ArrowLeft" || e.code == "KeyA" )&& velocityX != 1) { 
         velocityX = -1;
         velocityY = 0;
     }
-    else if (e.code == "ArrowRight" && velocityX != -1) {
+    else if ((e.code == "ArrowRight" || e.code == "KeyD" )&& velocityX != -1) {
         velocityX = 1;
         velocityY = 0;
     } 
