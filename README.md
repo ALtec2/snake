@@ -23,3 +23,5 @@
 
 ## Demo
 - here is the demo link https://altecs.itch.io/snek
+
+<img width="1280" height="800" alt="Screen Shot 2026-11-22 at 8 01 15 PM" src="https://github.com/user-attachments/assets/06bac78d-f5ae-41f2-a876-dcdc92b10330" />
