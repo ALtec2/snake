@@ -23,6 +23,9 @@ foodImage.src = "Assets/Food.png";
 var snakeHeadImg = new Image();
 snakeHeadImg.src = "Assets/SnekHead.png";
 
+var fallingtilesImage = new Image();
+fallingtilesImage.src = "Assets/Trap.png";
+
 var gameOver;
 var startUp = false;
 var spawnCount = 0;
@@ -107,7 +110,7 @@ function update() {
         // Draw Active Hazards (White)
         context.fillStyle = "white";
         for (let i = 0; i < fallingObjects.length; i++) {
-            context.fillRect(fallingObjects[i][0], fallingObjects[i][1], blockSize, blockSize);
+            context.drawImage(fallingtilesImage, fallingObjects[i][0], fallingObjects[i][1], blockSize, blockSize);
             
             // Check Hazard Collision
             if (snakeX === fallingObjects[i][0] && snakeY === fallingObjects[i][1]) {
