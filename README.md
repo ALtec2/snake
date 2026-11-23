@@ -7,11 +7,13 @@
 - also I wanted to learn javascript
 
 ## What is it
-- This is a snake program called snek that you can play snake one
+- This is a snake program called snek that you can play snake 
+- There is also a really fun twist falling tiles :)
+- They basically just a extra walls because I found the game too boring
 
 ## How to run
-- Just click on the demo link here:
--Have fun watching :)
+- Just click on the demo link here: https://altecs.itch.io/snek
+-Have fun playing :)
 
 ## How I made it
 
